@@ -104,6 +104,8 @@ export function renderCell<T extends ISimpleTableCell>(
               <div
                 style={{
                   flex: 1,
+                  fontSize: '12px',
+                  color: 'rgba(0,0,0,0.85)',
                 }}
               >
                 {rule.fullDescription.text}
