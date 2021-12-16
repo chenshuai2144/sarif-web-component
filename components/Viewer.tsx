@@ -161,7 +161,7 @@ export class Viewer extends Component<ViewerProps> {
 
         if (showSuccess && !filterKeywords) {
           return (
-            <div className="page-content-left page-content-right page-content-top">
+            <div className="page-content-left">
               <Card contentProps={{ contentPadding: false }}>
                 <ZeroData
                   imagePath={successPng}
@@ -174,11 +174,11 @@ export class Viewer extends Component<ViewerProps> {
         }
 
         return (
-          <div className="page-content-left page-content-right page-content-top">
+          <div>
             <Card contentProps={{ contentPadding: false }}>
               <ZeroData
                 imagePath={noResultsPng}
-                imageAltText="No results found"
+                imageAltText="未找到任何结果"
                 secondaryText="No results found"
               />
             </Card>
@@ -188,7 +188,7 @@ export class Viewer extends Component<ViewerProps> {
       return runStoresSorted
         .filter((run) => !filterKeywords || run.filteredCount)
         .map((run, index) => (
-          <div key={run.logIndex} className="page-content-left page-content-right page-content-top">
+          <div key={run.logIndex}>
             <RunCard runStore={run} index={index} runCount={runStoresSorted.length} />
           </div>
         ));
@@ -198,8 +198,6 @@ export class Viewer extends Component<ViewerProps> {
       <FilterKeywordContext.Provider value={filterKeywords ?? ''}>
         <SurfaceContext.Provider value={{ background: SurfaceBackground.neutral }}>
           <Page>
-            <div className="swcShim"></div>
-            {/*  */}
             {this.warnOldVersion && (
               <MessageCard
                 severity={MessageCardSeverity.Warning}

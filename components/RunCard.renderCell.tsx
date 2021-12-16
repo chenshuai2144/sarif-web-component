@@ -70,19 +70,17 @@ export function renderCell<T extends ISimpleTableCell>(
       ? ExpandableTreeCell({
           children: (
             <div className="swcRowRule">
-              <Tooltip text={rule.fullDescription.text}>
-                <div>
-                  {/* Div for flow layout. */}
-                  {tryOr(
-                    () =>
-                      rule.name && (
-                        <>
-                          <Hi>{rule.name}</Hi>
-                        </>
-                      ),
-                  )}
-                </div>
-              </Tooltip>
+              <div>
+                {/* Div for flow layout. */}
+                {tryOr(
+                  () =>
+                    rule.name && (
+                      <>
+                        <Hi>{rule.name}</Hi>
+                      </>
+                    ),
+                )}
+              </div>
               {tryOr(() =>
                 rule.relationships.map((rel, i) => {
                   const taxon =
@@ -98,11 +96,18 @@ export function renderCell<T extends ISimpleTableCell>(
               <Pill size={PillSize.compact}>{rule.treeItem.childItemsAll.length}</Pill>
               <span
                 style={{
-                  width: 12,
+                  width: 24,
                 }}
               >
                 {' '}
               </span>
+              <div
+                style={{
+                  flex: 1,
+                }}
+              >
+                {rule.fullDescription.text}
+              </div>
             </div>
           ),
           colspan,
