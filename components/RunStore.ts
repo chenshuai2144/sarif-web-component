@@ -54,7 +54,10 @@ export class RunStore {
     const { driver } = run.tool;
     this.driverName =
       (run.properties && run.properties['logFileName']) ||
-      driver.name.replace(/^Microsoft.CodeAnalysis.Sarif.PatternMatcher$/, 'CredScan on Push');
+      (driver.fullName || driver.name).replace(
+        /^Microsoft.CodeAnalysis.Sarif.PatternMatcher$/,
+        'CredScan on Push',
+      );
 
     if (!run._augmented) {
       run._rulesInUse = new Map<string, Rule>();

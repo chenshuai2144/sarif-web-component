@@ -1,6 +1,6 @@
 {
   "name": "@qixian.cs/sarif-web-component",
-  "version": "0.6.0-16",
+  "version": "0.6.0-17",
   "description": "Sarif Viewer",
   "repository": {
     "type": "git",
