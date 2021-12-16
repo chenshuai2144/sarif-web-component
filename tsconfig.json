@@ -1,18 +1,19 @@
 {
-	"compilerOptions": {
-		"outDir": "dist", // './' prefix not neccesary
-		"declaration": true,
-		"sourceMap": true,
-		"noImplicitAny": false,
-		"target": "ES6",
-		"module" : "CommonJS",
-		"moduleResolution": "Node",
-		"jsx": "react",
-		"downlevelIteration": true,
-		"experimentalDecorators": true
-	},
-	"exclude": [
-		"dist", // Avoids error: Cannot write file '/dist/components/FilterBar.d.ts' because it would overwrite input file.
-		"index.tsx", // For webpack-dev-server only. Prevent index.d.ts being generated to /dist.
-	]
+  "compilerOptions": {
+    "outDir": "dist", // './' prefix not neccesary
+    "declaration": true,
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "target": "ES6",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "jsx": "react",
+    "downlevelIteration": true,
+    "experimentalDecorators": true
+  },
+  "exclude": [
+    "dist", // Avoids error: Cannot write file '/dist/components/FilterBar.d.ts' because it would overwrite input file.
+    "index.tsx" // For webpack-dev-server only. Prevent index.d.ts being generated to /dist.
+  ],
+  "include": [".eslintrc.js", "components"]
 }

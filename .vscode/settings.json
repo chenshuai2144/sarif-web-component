@@ -1,6 +1,6 @@
 {
-	"files.exclude": {
-		"dist*": true,
-		"packages": true
-	}
+  "files.exclude": {
+    "dist*": true,
+    "packages": true
+  }
 }

@@ -2,44 +2,44 @@
 // Licensed under the MIT License.
 
 .swcSnippet {
-	margin: 4px 0; // override user agent
-	padding-right: 4px; // Override the 2px from _platformCommon.scss so the ClipboardButton looks right.
-	font-size: 12px;
-	overflow: hidden;
-	position: relative; // For gradient
-	display: flex; // For line number column.
+  position: relative; // For gradient
+  display: flex; // For line number column.
+  margin: 4px 0; // override user agent
+  padding-right: 4px; // Override the 2px from _platformCommon.scss so the ClipboardButton looks right.
+  overflow: hidden;
+  font-size: 12px;
 
-	code {
-		font-family: SFMono-Regular, monospace;
-	} // Override UA default 'monospace'.
+  code {
+    font-family: SFMono-Regular, monospace;
+  } // Override UA default 'monospace'.
 
-	&.clipped {
-		&::before {
-			content: "";
-			width: 100%;
-			height: 108px; // 108px is a 6-line snippet whcih is very common.
-			position: absolute;
-			left: 0;
-			top: 0;
-			background: linear-gradient(transparent 75px, var(--palette-black-alpha-6));
-		}
-	}
+  &.clipped {
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 108px; // 108px is a 6-line snippet whcih is very common.
+      background: linear-gradient(transparent 75px, var(--palette-black-alpha-6));
+      content: '';
+    }
+  }
 
-	.swcRegion {
-		background-color: rgba(255, 230, 0, 0.5);
-	}
+  .swcRegion {
+    background-color: rgba(255, 230, 0, 0.5);
+  }
 }
 
 code.lineNumber {
-	width: 36px;
-	color: hsl(0, 0%, 60%);
-	flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 36px;
+  color: hsl(0, 0%, 60%);
 }
 
 .swcSnippet .hljs {
-	color: inherit;
-	display: initial;
-	overflow-x: initial;
-	padding: initial;
-	background: initial;
+  display: initial;
+  padding: initial;
+  overflow-x: initial;
+  color: inherit;
+  background: initial;
 }
